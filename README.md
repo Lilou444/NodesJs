@@ -1,4 +1,4 @@
-# NodesJs
+
 
 # README
 
@@ -8,8 +8,8 @@
 
 
 
-
 ## Descriptions du projet
+
 
 Ce projet à pour but de découvrir l'univers de Marvel sous forme de "petit quizz".
 Pour cela , nous utilisons l'api de Marvel. Cette api nous permet d'accéder aux bases de données de Marvel.
@@ -21,8 +21,11 @@ Explication du quizz :
  - Il lui son ensuite posé trois questions où il y devra faire un choix 
  - Pour chaque question ,  il y a un résultat qui lui sera donné à la fin par rapport à ses réponses. 
 
-## Indication 
 
-Il suffit de taper "mycommand" pour lancer le quizz.
+## Indications
 
+
+Dans le dossier " [Projet](https://github.com/Lilou444/NodesJs/tree/master/Projet)" , vous trouverez le fichier  contenant le quizz appelé "[
+projet_marvel.js](https://github.com/Lilou444/NodesJs/blob/master/Projet/projet_marvel.js)".
+Il vous suffira de taper  "mycommand" pour lancer le fichier.js
 
