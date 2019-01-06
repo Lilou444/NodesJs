@@ -1,0 +1,68 @@
+
+##Lilou-444
+##06-01-2019
+
+//page pour voir tous les users
+
+<%- include layouts/header.ejs %>
+
+        <div class="page-data">
+         <div class="data-btn">
+                <form name="formulaire" action="/todos">
+                    <button onClick="index.ejs">retour</button>
+                    </form>
+         </div>
+         <div class="users" >
+                <form name="formulaire" action="/users/add">
+                    <button onClick="inscription.ejs">+ Add</button>
+                    </form>
+             </div>
+         <div class="data-table">
+            <table border="1" cellpadding="7" cellspacing="7">
+                <tr>
+                    <th width="50px">No</th>
+                    <th>firtsname</th>
+                    <th>lastname</th>
+                    <th>username</th>
+                    <th>password</th>
+                    <th>email</th>
+                    <th>created_at</th>
+                    <th>updtes_at</th>
+                    <th width="120px">Action</th>
+                </tr>
+                               
+                <% if(users.length){ 
+                                
+                 for(var i = 0;i < todos.length;i++) { %>
+                 
+                <tr>
+                    <td><%=(i+1)%></td>
+                    <td><%=users[i].firstname%></td>
+                    <td><%=users[i].lastname%></td>
+                    <td><%=users[i].username%></td>
+                    <td><%=users[i].password%></td>
+                    <td><%=users[i].email%></td>
+                    <td><%=users[i].created_at%></td>
+                    <td><%=users[i].updated_at%></td>
+                    <td>
+                        <a class="a-inside edit" href="/users/:ROWID/edit/<%=users.id%>">Edit</a>
+                       
+                        <a class="a-inside delete" href="/users/delete/<%=users.id%>">Delete</a>
+                       
+                    </td>
+                </tr>
+            <% }
+            
+             }else{ %>
+                 <tr>
+                    <td colspan="3">No user</td>
+                 </tr>
+            <% } %>
+                
+                              
+                
+            </table>
+         </div>
+        </div>
+        
+<%- include layouts/footer.ejs %>

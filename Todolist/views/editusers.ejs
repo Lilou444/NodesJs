@@ -1,0 +1,48 @@
+lou-444
+##06-01-2019
+
+//page pour éditer des users
+
+
+<%- include layouts/header.ejs %>
+
+        <div class="page-data">
+            
+            <form method="post" action="/:ROWID/edit">
+                <table cellpadding="11">
+                <tr>
+                    <td class="label">firstname</td><td>: <input type="text" name="name" value="<%=users.fisrtanem%>" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label">lastname</td><td>: <input type="text" name="completion" value="<%=users.lastname%>" required></td>
+                </tr>   
+                <tr>
+                    <td class="label">username</td><td>: <input type="text" value="<%=users.usernamet%>" name="update_at" required></td>
+                 </tr>
+                <tr>
+                    <td class="label">password</td><td>: <input type="passwoord" name="password" value="<%=users.password%>" required></td>
+                </tr>
+                <tr>
+                    <td class="label">email</td><td>: <input type="email" name="email" value="<%=users.email%>" required></td>
+                </tr>
+                <tr>
+                    <td class="label">created</td><td>: <input type="text" name="phone" value="<%=users.created_at%>" required></td>
+                </tr>
+                <tr>
+                    <td class="label">updated</td><td>: <input type="text" name="phone" value="<%=users.updated_at%>" required></td>
+                </tr>
+                 <tr>
+                    <td class="label"></td>
+                    <td>
+                        &nbsp; <input type="submit" name="submit" value="Save">
+                       
+                    </td>
+                 </tr>
+                </table>
+            </form>
+            
+        </div>
+        <form name="formulaire" action="/todos">
+            <button onClick="index.ejs">retour</button>   
+        </form>
+<%- include layouts/footer.ejs %>

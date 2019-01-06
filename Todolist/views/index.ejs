@@ -1,0 +1,64 @@
+lou-444
+##06-01-2019
+
+//page pour voir toutes les todos 
+
+
+<%- include layouts/header.ejs %>
+
+        <div class="page-data">
+         <div class="data-btn">
+            <form name="formulaire" action="/todos/add">
+                <button onClick="addtodos.ejs">+ Add</button>   
+            </form>
+         </div>
+         <div class="users" >
+                <form name="formulaire" action="/users">
+                    <button onClick="indexusers.ejs">Profil users</button>
+                    </form>
+             </div>
+         <div class="data-table">
+            <table border="1" cellpadding="7" cellspacing="7">
+                <tr>
+                    <th width="50px">No</th>
+                    <th>message</th>
+                    <th>completion</th>
+                    <th>updated_at</th>
+                    <th>created_at</th>
+                    <th>usersid</th>
+                    <th width="120px">Action</th>
+                </tr>
+                               
+                <% if(todos.length){ 
+                                
+                 for(var i = 0;i < todos.length;i++) { %>
+                 
+                <tr>
+                    <td><%=(i+1)%></td>
+                    <td><%=todos[i].message%></td>
+                    <td><%=todos[i].completion%></td>
+                    <td><%=todos[i].updated_at%></td>
+                    <td><%=todos[i].created_at%></td>
+                    <td><%=todos[i].userId%></td>
+                    <td>
+                        <a class="a-inside edit" href="/:ROWID/edit/<%=todos.id%>">Edit</a>
+                       
+                        <a class="a-inside delete" href="/todos/delete/<%=todos.id%>">Delete</a>
+                       
+                    </td>
+                </tr>
+            <% }
+            
+             }else{ %>
+                 <tr>
+                    <td colspan="3">No user</td>
+                 </tr>
+            <% } %>
+                
+                              
+                
+            </table>
+         </div>
+        </div>
+        
+<%- include layouts/footer.ejs %>

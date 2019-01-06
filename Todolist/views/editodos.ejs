@@ -1,0 +1,41 @@
+lou-444
+##06-01-2019
+
+//page pour éditer des todos 
+
+
+<%- include layouts/header.ejs %>
+
+        <div class="page-data">
+            
+            <form method="post" action="/:ROWID/edit/">
+                <table cellpadding="11">
+                <tr>
+                    <td class="label">message</td><td>: <input type="text" name="message" value="<%=todos.message%>" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label">completion</td><td>: <input type="text" name="completion" value="<%=todos.completion%>" required></td>
+                </tr>   
+                <tr>
+                    <td class="label">update_at</td><td>: <input type="text" value="<%=todos.update_at%>" name="update_at" required></td>
+                 </tr>
+                <tr>
+                    <td class="label">created_at</td><td>: <input type="text" name="phone" value="<%=todos.created_at%>" required></td>
+                </tr>
+                <tr>
+                    <td class="label">userId</td><td>: <input type="number" name="phone" value="<%=todos.userId%>" required></td>
+                </tr>
+                 <tr>
+                    <td class="label"></td>
+                    <td>
+                        &nbsp; <input type="submit" name="submit" value="Save">
+                    </td>
+                 </tr>
+                </table>
+            </form>
+            
+        </div>
+        <form name="formulaire" action="/todos">
+            <button onClick="index.ejs">retour</button>   
+        </form>
+<%- include layouts/footer.ejs %>
